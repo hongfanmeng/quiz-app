@@ -17,21 +17,21 @@ export const RootLayout: React.FC<LayoutProps> = ({ children }) => {
   const { pathname } = useLocation();
 
   return (
-    <main className="h-full w-screen flex flex-col">
-      <div className="flex-1 h-0">{children}</div>
-      <div className="flex-0">
-        <div className="btm-nav">
-          {tabs.map((tab) => (
-            <button
-              key={tab.path}
-              className={clsx(pathname == tab.path && "active text-primary")}
-              onClick={() => navigate(tab.path)}
-            >
-              <tab.icon />
-              <span className="btm-nav-label">{tab.title}</span>
-            </button>
-          ))}
-        </div>
+    <main className="h-screen w-full flex flex-col bg-base-300">
+      <div className="flex-1 h-0 w-full">{children}</div>
+      <div className="btm-nav relative">
+        {tabs.map((tab) => (
+          <button
+            key={tab.path}
+            className={clsx(
+              pathname == tab.path && "active text-primary bg-base-200"
+            )}
+            onClick={() => navigate(tab.path)}
+          >
+            <tab.icon />
+            <span className="btm-nav-label">{tab.title}</span>
+          </button>
+        ))}
       </div>
     </main>
   );

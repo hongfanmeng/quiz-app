@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ["Noto Sans TC", "sans-serif"],
+      sans: ["Noto Sans TC", "Noto Sans SC", "sans-serif"],
     },
   },
   plugins: [daisyui],
