@@ -83,7 +83,7 @@ export const QuestionPage: React.FC = () => {
                         letter === currentQuestion.ans &&
                         "bg-green-500 text-gray-200"
                     )}
-                    onClick={() => setCurrentAnswer(letter)}
+                    onClick={() => !currentAnswer && setCurrentAnswer(letter)}
                   >
                     <span className="text-lg font-semibold">{letter}.</span>
                     <span className="text-lg font-semibold">{choice}</span>
