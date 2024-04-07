@@ -45,9 +45,9 @@ export const QuestionPage: React.FC = () => {
     <div className="h-screen flex flex-col p-4 gap-4 container mx-auto max-w-[1280px]">
       <div className="flex gap-4 relative">
         <button onClick={() => navigate(-1)} className="absolute top-1">
-          <ArrowLeft className="text-white" />
+          <ArrowLeft className="text-base-content" />
         </button>
-        <span className="font-bold text-xl text-white mx-auto lg:text-2xl">
+        <span className="font-bold text-xl text-base-content mx-auto lg:text-2xl">
           {exam?.title ?? "加載中..."}
         </span>
       </div>
@@ -77,12 +77,13 @@ export const QuestionPage: React.FC = () => {
                   <div
                     key={letter}
                     className={twMerge(
-                      "rounded-md flex gap-2 px-6 py-4 items-center bg-neutral",
+                      "rounded-md flex gap-2 px-6 py-4 items-center shadow-md",
+                      "shadow-md border dark:border-none dark:bg-base-content/10",
                       !currentAnswer && "cursor-pointer hover:bg-base-200",
-                      selected && !correct && "text-gray-200 bg-red-500",
+                      selected && !correct && "text-white !bg-red-500",
                       currentAnswer &&
                         letter === currentQuestion.ans &&
-                        "bg-green-500 text-gray-200"
+                        "!bg-green-500 text-white"
                     )}
                     onClick={() => !currentAnswer && setCurrentAnswer(letter)}
                   >
@@ -105,7 +106,7 @@ export const QuestionPage: React.FC = () => {
                 上一題
               </button>
               <button
-                className="btn text-base btn-primary text-white mb-12"
+                className="btn text-base btn-primary text-primary-content mb-12"
                 disabled={
                   currentIdx == exam!.questions.length - 1 || !currentAnswer
                 }

@@ -16,10 +16,10 @@ export const HomePage: React.FC = () => {
       {exams.map((exam) => (
         <div
           className={clsx(
-            "rounded-md shadow-md w-full p-4 bg-neutral",
+            "rounded-md shadow-md w-full p-4 bg-base-100",
             exam.disabled && "opacity-30",
             !exam.disabled &&
-              "active:bg-base-200 hover:bg-base-100 cursor-pointer"
+              "active:bg-base-200 hover:bg-base-200 cursor-pointer"
           )}
           onClick={() => !exam.disabled && navigate(`/exam/${exam.key}`)}
         >
