@@ -42,12 +42,12 @@ export const QuestionPage: React.FC = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-base-300 p-4 gap-4">
+    <div className="h-screen flex flex-col p-4 gap-4 container mx-auto max-w-[1280px]">
       <div className="flex gap-4 relative">
         <button onClick={() => navigate(-1)} className="absolute top-1">
           <ArrowLeft className="text-white" />
         </button>
-        <span className="font-bold text-xl text-white mx-auto">
+        <span className="font-bold text-xl text-white mx-auto lg:text-2xl">
           {exam?.title}
         </span>
       </div>
@@ -62,9 +62,9 @@ export const QuestionPage: React.FC = () => {
         </span>
       </div>
       {currentQuestion && (
-        <div className="p-4 bg-base-100 rounded-2xl flex-1">
-          <div className="flex flex-col gap-12 h-full">
-            <span className="text-xl font-bold">
+        <div className="p-4 bg-base-100 rounded-2xl flex-1 w-full lg:p-12">
+          <div className="flex flex-col gap-12 h-full max-w-[800px] mx-auto">
+            <span className="font-bold text-xl lg:text-2xl">
               {currentQuestion.question}
             </span>
 
@@ -78,6 +78,7 @@ export const QuestionPage: React.FC = () => {
                     key={letter}
                     className={twMerge(
                       "rounded-md flex gap-2 px-6 py-4 items-center bg-neutral",
+                      !currentAnswer && "cursor-pointer",
                       selected && !correct && "text-gray-200 bg-red-500",
                       currentAnswer &&
                         letter === currentQuestion.ans &&

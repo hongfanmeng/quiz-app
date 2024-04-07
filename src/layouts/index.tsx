@@ -17,21 +17,36 @@ export const RootLayout: React.FC<LayoutProps> = ({ children }) => {
   const { pathname } = useLocation();
 
   return (
-    <main className="h-screen w-full flex flex-col bg-base-300">
-      <div className="flex-1 h-0 w-full">{children}</div>
-      <div className="btm-nav relative">
-        {tabs.map((tab) => (
-          <button
-            key={tab.path}
-            className={clsx(
-              pathname == tab.path && "active text-primary bg-base-200"
-            )}
-            onClick={() => navigate(tab.path)}
-          >
-            <tab.icon />
-            <span className="btm-nav-label">{tab.title}</span>
-          </button>
-        ))}
+    <main className="h-screen w-full flex flex-col">
+      <div className="navbar bg-primary px-6 items-center">
+        <div className="container max-w-[1280px] mx-auto">
+          <img alt="icon" src="/icon.png" className="w-8 h-8" />
+          <a className="font-bold text-2xl text-white ml-4">複習問答</a>
+          <div className="flex-1" />
+          <img alt="avatar" src="/avatar.png" className="w-10 rounded-full" />
+        </div>
+      </div>
+
+      <div className="flex-1 h-0 w-full container mx-auto max-w-[1280px]">
+        {children}
+      </div>
+
+      <div className="bg-base-100">
+        <div className="btm-nav relative container mx-auto max-w-[1280px]">
+          {tabs.map((tab) => (
+            <button
+              key={tab.path}
+              className={clsx(
+                pathname == tab.path && "active text-primary bg-base-200",
+                "hover:bg-base-200"
+              )}
+              onClick={() => navigate(tab.path)}
+            >
+              <tab.icon />
+              <span className="btm-nav-label">{tab.title}</span>
+            </button>
+          ))}
+        </div>
       </div>
     </main>
   );
