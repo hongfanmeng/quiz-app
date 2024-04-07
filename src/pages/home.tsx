@@ -13,11 +13,11 @@ export const HomePage: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className="h-full flex flex-col">
-      <div className="navbar bg-primary justify-between px-6">
-        <a className="font-bold text-xl text-white">複習問答</a>
-        <div className="w-10 rounded-full">
-          <img alt="avatar" src="https://avatar.iran.liara.run/public/49" />
-        </div>
+      <div className="navbar bg-primary px-6 items-center">
+        <img alt="icon" src="/icon.png" className="w-8 h-8" />
+        <a className="font-bold text-2xl text-white ml-4">複習問答</a>
+        <div className="flex-1" />
+        <img alt="avatar" src="/avatar.png" className="w-10 rounded-full" />
       </div>
       <div className="flex flex-col gap-4 p-4 flex-1">
         {exams.map((exam) => (
