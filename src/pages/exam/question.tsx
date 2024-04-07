@@ -48,7 +48,7 @@ export const QuestionPage: React.FC = () => {
           <ArrowLeft className="text-white" />
         </button>
         <span className="font-bold text-xl text-white mx-auto lg:text-2xl">
-          {exam?.title}
+          {exam?.title ?? "加載中..."}
         </span>
       </div>
       <div className="flex flex-col items-center">
@@ -78,7 +78,7 @@ export const QuestionPage: React.FC = () => {
                     key={letter}
                     className={twMerge(
                       "rounded-md flex gap-2 px-6 py-4 items-center bg-neutral",
-                      !currentAnswer && "cursor-pointer",
+                      !currentAnswer && "cursor-pointer hover:bg-base-200",
                       selected && !correct && "text-gray-200 bg-red-500",
                       currentAnswer &&
                         letter === currentQuestion.ans &&
