@@ -87,7 +87,9 @@ export const QuestionPage: React.FC = () => {
                     )}
                     onClick={() => !currentAnswer && setCurrentAnswer(letter)}
                   >
-                    <span className="text-lg font-semibold">{letter}.</span>
+                    <span className="text-lg font-semibold self-start">
+                      {letter}.
+                    </span>
                     <span className="text-lg font-semibold">{choice}</span>
                     <div className="flex-grow" />
                     {selected && !correct && <CircleX />}
